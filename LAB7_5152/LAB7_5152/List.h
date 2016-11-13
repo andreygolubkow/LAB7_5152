@@ -187,5 +187,27 @@ void List<T>::Clear()
 	_head = nullptr;
 	_count = 0;
 }
+template<class T>
+bool operator==(List<T> & l1, List<T> & l2)
+{
+	if (l1.GetCount() == l2.GetCount())
+	{
+		bool equal = true;
+		for (int i=0;i<l1.GetCount();i++)
+			if (*l1.Find(i) != *l2.Find(i))
+			{
+				equal = false;
+			}
+		return equal;
+	}
+	else
+	{
+		return false;
+	}
+}
 
-
+template<class T>
+bool operator!=(List<T> & l1, List<T> & l2)
+{
+	return !(l1==l2);
+}
