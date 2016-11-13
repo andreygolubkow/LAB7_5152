@@ -31,3 +31,6 @@ protected:
 
 std::istream& operator >> (std::istream& is, Person& person);
 std::ostream& operator <<(std::ostream & os, Person const & person);
+
+bool operator==(Person & p1, Person & p2);
+bool operator!=(Person & p1, Person & p2);

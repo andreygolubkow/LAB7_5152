@@ -149,3 +149,28 @@ std::ostream & operator<<(std::ostream & os, Person const & person)
 	os << "Name: "<<person.Name <<" Surname: "<< person.Surname <<" Age: "<< person.Age <<" Sex: "<< person.sex;
 	return os;
 }
+
+
+bool operator==(Person & p1, Person & p2)
+{
+	if ((&p1 != nullptr && &p2 != nullptr))
+	{
+		if ((p1.GetAge() == p2.GetAge()) && (p1.Name == p2.Name) && (p1.sex == p2.sex) && (p1.Surname == p2.Surname))
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+	else
+	{
+		return false;
+	}
+}
+
+bool operator!=(Person & p1, Person & p2)
+{
+	return !(p1 == p2);
+}
